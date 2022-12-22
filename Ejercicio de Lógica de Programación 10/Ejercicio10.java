@@ -40,6 +40,8 @@ public class Ejercicio10 {
 		  int index = random.nextInt(dictionary.size());
 		  
 		  // Seleccionamos la palabra correspondiente al índice
+		  // con el metodo .keySet() obtenemos las palabras y con .toArray() lo transformamos en Array
+		  // para poder obtener una palabra mediante un indice (index)
 		  String word = (String) dictionary.keySet().toArray()[index];
 		  
 		  //Añadimos la palabra al array de 5 palabras
@@ -54,8 +56,8 @@ public class Ejercicio10 {
 		
 		for (String word : words) {
 		  // Mostramos la palabra al usuario y le pedimos que la traduzca al inglés
-		  System.out.println("Traduce la palabra '" + word + "' al inglés:");
-		  String answer = scanner.nextLine();
+		  System.out.print("\n Traduce la palabra '" + word + "' al inglés: ");
+		  String answer = scanner.nextLine().toLowerCase();
 		  // Comparamos la respuesta del usuario con la traducción correcta del diccionario
 		  if (answer.equals(dictionary.get(word))) {
 		    correctAnswers++;
